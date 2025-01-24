@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { User } from "@/types/auth";
 import { InfoCard } from "@/components/dashboard/InfoCard";
 import { CompanyInfoPanel } from "@/components/dashboard/CompanyInfoPanel";
+import AnalyticsDashboard from "@/components/dashboard/AnalyticsDashboard";
 
 export default function DashboardPage() {
   const { isAuthenticated, logout } = useAuth();
@@ -134,6 +135,10 @@ export default function DashboardPage() {
                 value={new Date(userData.createdAt).toLocaleDateString()}
                 bgColor="bg-purple-500"
               />
+            </div>
+
+            <div className="mt-8">
+              <AnalyticsDashboard />
             </div>
           </div>
         )}
